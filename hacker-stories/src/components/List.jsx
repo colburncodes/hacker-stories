@@ -1,22 +1,14 @@
-import list from "../data";
+import Item from "./Item";
 
-const List = () => (
-  <ul>
-    {list.map((item) => {
-      return (
-        <li key={item.objectId}>
-          <span>
-            <a href={item.url}>{item.title}</a>
-          </span>
-          <span>{item.author}</span>
-          <span>{item.num_comments}</span>
-          <span>{item.points}</span>
-        </li>
-      );
-    })}
-  </ul>
-);
-
-
+const List = (props) => {
+  console.log("List renders");
+  return (
+    <ul>
+      {props.list.map((item) => (
+        <Item key={item.objectId} item={item} />
+      ))}
+    </ul>
+  );
+};
 
 export default List;
