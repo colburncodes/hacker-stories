@@ -1,10 +1,9 @@
 import Item from "./Item";
 
-const List = (props) => {
-  console.log("List renders");
+const List = ({ list }) => {
   return (
     <ul>
-      {props.list.map((item) => (
+      {list.map((item) => (
         <Item key={item.objectId} item={item} />
       ))}
     </ul>

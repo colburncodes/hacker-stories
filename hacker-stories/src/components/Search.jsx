@@ -1,11 +1,4 @@
-import { useState } from "react";
-
-const Search = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleSubmit = (event) => {
-    setSearchTerm(event.target.value);
-  };
+const Search = ({ search, onSearch }) => {
   return (
     <div>
       <label htmlFor="search">Search: </label>
@@ -13,11 +6,9 @@ const Search = () => {
         id="search"
         type="text"
         placeholder="Search"
-        onChange={handleSubmit}
+        value={search}
+        onChange={onSearch}
       />
-      <p>
-        <strong>{searchTerm}</strong>
-      </p>
     </div>
   );
 };
