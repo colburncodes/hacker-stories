@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import InputWithLabel from "./components/InputWithLabel";
 import List from "./components/List";
-import Search from "./components/Search";
 
 import useStorageState from "./components/StorageHook";
 
@@ -22,7 +21,13 @@ const App = () => {
   return (
     <div>
       <h1>My Hacker Stories</h1>
-      <Search search={searchTerm} onSearch={handleSearch} />
+      {/* <Search search={searchTerm} onSearch={handleSearch} /> */}
+      <InputWithLabel
+        id="search"
+        label="Search"
+        value={searchTerm}
+        onInputChange={handleSearch}
+      />
       <hr />
       <List list={searchedStories} />
     </div>
