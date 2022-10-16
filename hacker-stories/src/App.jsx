@@ -24,10 +24,11 @@ const App = () => {
       {/* <Search search={searchTerm} onSearch={handleSearch} /> */}
       <InputWithLabel
         id="search"
-        label="Search"
         value={searchTerm}
         onInputChange={handleSearch}
-      />
+      >
+        <strong>Search:</strong>
+      </InputWithLabel>
       <hr />
       <List list={searchedStories} />
     </div>
